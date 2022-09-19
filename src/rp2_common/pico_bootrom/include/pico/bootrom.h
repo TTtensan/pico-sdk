@@ -79,7 +79,7 @@ extern "C" {
  * \param c2 the second character
  * \return the 'code' to use in rom_func_lookup() or rom_data_lookup()
  */
-static inline uint32_t rom_table_code(uint8_t c1, uint8_t c2) {
+static inline uint32_t __not_in_flash_func(rom_table_code)(uint8_t c1, uint8_t c2) {
     return ROM_TABLE_CODE((uint32_t) c1, (uint32_t) c2);
 }
 

@@ -281,7 +281,7 @@ static inline void __breakpoint(void) {
  * The compiler will not move the load from `some_other_memory_location` above the memory barrier (which it otherwise
  * might - even above the memory store!)
  */
-__force_inline static void __compiler_memory_barrier(void) {
+__force_inline static void __not_in_flash_func(__compiler_memory_barrier)(void) {
     __asm__ volatile ("" : : : "memory");
 }
 
